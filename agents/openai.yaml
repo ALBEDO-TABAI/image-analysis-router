@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Analysis Router"
+  short_description: "Route images into targeted critique flows"
+  default_prompt: "Use $image-analysis-router to classify these images, choose the right analysis path, and write an analysis plus study report."
