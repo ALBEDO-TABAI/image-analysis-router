@@ -1,98 +1,139 @@
 # Image Analysis Router
 
-OpenAI Skill | 面向 AI 代理的图像分流与定向分析工具
+[中文文档](README.zh-CN.md) | English
 
-> 它不是把所有图片都按同一套模板去“描述一遍”，而是先判断这张图应该用什么方法读，再给出对应的分析和学习建议。
+<div align="center">
 
-完整中文说明见 [README.zh-CN.md](./README.zh-CN.md)。
+**🖼️ OpenAI Skill** | Route first, analyze second
 
-## 这个项目解决什么问题
+[![Type: OpenAI Skill](https://img.shields.io/badge/Type-OpenAI%20Skill-6f42c1)](./SKILL.md)
+[![Routes: 17](https://img.shields.io/badge/Routes-17-1f6feb)](./references/route-matrix.md)
+[![Python: 3.13+ tested](https://img.shields.io/badge/Python-3.13%2B%20tested-2ea44f)](./scripts/route_image_request.py)
 
-很多图像请求真正难的地方，不是“看见了什么”，而是“该用哪套标准来判断这张图”。
+</div>
 
-这套 Skill 的做法是：
+> 🎯 This skill does not treat every image like the same homework. It decides how the image should be read first, then returns a targeted critique and a practical study plan.
 
-1. 先根据用户问题、文件名和补充线索做初步分流
-2. 再结合实际看图复核，避免脚本误判
-3. 按最合适的路线做定向分析，而不是混用标准
-4. 同时给出分析结论和下一步训练建议
+## ✨ Features
 
-## 主要能力
+| Stage | Function | Description |
+|-------|----------|-------------|
+| 1️⃣ | **Smart Routing** | Read the request, filenames, and hints first to narrow down the right lens |
+| 2️⃣ | **Visual Check** | Treat the script as a prior, then confirm with actual visual evidence |
+| 3️⃣ | **Targeted Analysis** | Use one of 17 routes instead of forcing one standard onto every image |
+| 4️⃣ | **Dual Output** | Return both an `Analysis Report` and a `Study Report` |
 
-- 智能分流：先决定该怎么读图，再决定怎么写分析
-- 视觉复核：脚本只做初筛，最终结论回到可见证据
-- 定向分析：内置 17 条专用路线，覆盖设计、摄影、空间、产品、艺术、专业图像等常见场景
-- 双报告输出：同时产出 `Analysis Report` 和 `Study Report`
+## 🚀 Quick Start
 
-## 覆盖路线
+### Prerequisites
 
-### 设计与传播
+```bash
+# 1. Python for the local routing script
+py --version
 
-- `graphic-design`
-- `infographic-diagram`
-- `typography-lettering`
-- `presentation-document`
+# 2. An AI agent environment that can read local skills
+# For example: an environment that can load SKILL.md, references/, scripts/, and image input
 
-### 影像与叙事
+# 3. Image input
+# Local images, screenshots, filenames, OCR text, or image-heavy requests with context
+```
 
-- `photography`
-- `film-frame`
-- `comics-sequential`
-- `game-visual-design`
+### Usage
 
-### 艺术与空间
-
-- `painting-illustration`
-- `interior-design`
-- `architecture-urban`
-- `sculpture-installation-craft`
-
-### 对象与专业图像
-
-- `product-industrial-design`
-- `fashion-styling`
-- `scientific-medical-imaging`
-
-### 兜底路线
-
-- `generic-mixed`
-- `universal-fallback`
-
-## 快速开始
-
-### 1. 放进你的 Skill 目录
+🧩 This is a local OpenAI skill. Put the whole folder into your skill directory:
 
 ```bash
 mkdir -p "$CODEX_HOME/skills"
 cp -r ./image-analysis-router "$CODEX_HOME/skills/image-analysis-router"
 ```
 
-如果你的环境使用的是别的 Skill 目录，比如 `.agents/skills/`，把目标路径替换掉即可。
+📁 If your agent uses a different skill folder, such as `.agents/skills/`, replace the target path and keep the same folder structure.
 
-### 2. 直接向代理发起图像分析请求
+💬 Then call the skill with a real image request, for example:
 
-例如：
+> "Use `image-analysis-router` to review this poster. Focus on hierarchy and typography."
 
-- “用 `image-analysis-router` 分析这张海报，重点看层级和字体。”
-- “帮我拆一下这组室内效果图，顺便告诉我下一步怎么练。”
-- “看看这页 PPT 应该按什么路线分析，再给我一份学习报告。”
+> "Break down this batch of interior renders and tell me what to practice next."
 
-### 3. 只做本地预判时，先跑分流脚本
+> "Figure out which route fits this slide first, then give me a study report."
+
+🔎 If you only have text clues, filenames, or OCR, run the routing script first:
 
 ```bash
-py .\scripts\route_image_request.py --prompt "分析这张建筑立面图，看看它和街道关系处理得怎么样" --file "tower-facade-render.jpg"
+py .\scripts\route_image_request.py --prompt "Analyze this tower facade and check how it meets the street" --file "tower-facade-render.jpg"
 ```
 
-## 输出内容
+## 🧭 How Routing Works
 
-每次分析至少会产出两份结果：
+🛣️ The skill answers one question before anything else: what is the right way to read this image?
 
-- `Analysis Report`：路线判断、关键发现、详细分析、整体结论
-- `Study Report`：下一步该补什么、怎么练、下次注意什么
+```text
+Image request
+    ↓
+[1️⃣ Text and filename pass] ──→ route_image_request.py generates a routing prior
+    ↓
+[2️⃣ Visual confirmation] ──→ confirm the main route or split the batch
+    ↓
+[3️⃣ Method selection] ──→ choose 1 of 17 specialized routes
+    ↓
+[4️⃣ Final output] ──→ Analysis Report + Study Report
+```
 
-如果是成组图片，还会额外处理一致性、前后变化和混合批次拆组。
+### Route Confidence
 
-## 项目结构
+🧠 The skill marks how sure it is about the route before moving on:
+
+| Level | Meaning |
+|-------|---------|
+| `high` | The image type and user goal point clearly to one route |
+| `medium` | One route leads, but another one still makes sense |
+| `low` | The batch is mixed, the clues are thin, or the images need regrouping first |
+
+## 🗂️ Route Coverage
+
+🖍️ The skill currently ships with 17 routes for common image-reading jobs.
+
+### Design and communication
+
+- `graphic-design`: posters, brand visuals, packaging, UI screenshots, ad creatives
+- `infographic-diagram`: charts, maps, process diagrams, information graphics
+- `typography-lettering`: type posters, lettering, logotypes, calligraphy, letterform study
+- `presentation-document`: slides, report pages, proposal pages, document spreads
+
+### Image and narrative
+
+- `photography`: documentary, portrait, street, editorial, commercial photography
+- `film-frame`: movie stills, animation frames, storyboard shots, cinematic compositions
+- `comics-sequential`: comic pages, manga, strips, webtoon panels, sequence storytelling
+- `game-visual-design`: game UI, HUD, level screenshots, character panels
+
+### Art and space
+
+- `painting-illustration`: paintings, illustrations, concept art, stylized image work
+- `interior-design`: interior renders, room photos, material and furniture studies
+- `architecture-urban`: facades, street views, public space, urban and site relationships
+- `sculpture-installation-craft`: sculpture, installation, ceramics, craft-based 3D work
+
+### Objects and specialist imagery
+
+- `product-industrial-design`: products, prototypes, object form, packaging structure
+- `fashion-styling`: outfits, silhouettes, accessories, lookbooks, styling visuals
+- `scientific-medical-imaging`: medical scans, microscopy, technical and research imagery
+
+### Fallback routes
+
+- `generic-mixed`: mixed batches that need grouping before critique
+- `universal-fallback`: images that do not fit cleanly anywhere else but still need a structured read
+
+## 🧠 What You Get
+
+📌 Every run starts with a route decision: which route won, how confident the skill is, and why that route fits better than the alternatives.
+
+📝 The `Analysis Report` gives a quick read, a route-specific breakdown, and a final judgment about what the image is trying to do and where it actually lands.
+
+📚 The `Study Report` turns that into next steps: what to learn now, what drills to run, what to watch next time, and what comparisons are worth making.
+
+## 📁 Project Structure
 
 ```text
 image-analysis-router/
@@ -100,21 +141,68 @@ image-analysis-router/
 ├── README.md
 ├── README.zh-CN.md
 ├── agents/
+│   └── openai.yaml
 ├── scripts/
+│   └── route_image_request.py
 └── references/
+    ├── route-matrix.md
+    ├── output-contract.md
+    └── method-*.md
 ```
 
-## 使用原则
+## ⚙️ Configuration
 
-- 脚本结果只是初筛，不是最终结论
-- 重要判断必须回到可见证据
-- 不同图像类型不能混用同一套标准
-- 路线不明确时，要承认不确定，而不是硬套结论
+🛠️ The skill does not require a separate config file for the default workflow.
 
-## 相关文件
+🔤 If you only want a local routing guess before the full image review, you can call the script directly:
 
-- [完整中文说明](./README.zh-CN.md)
-- [Skill 入口](./SKILL.md)
-- [路线矩阵](./references/route-matrix.md)
-- [输出格式约定](./references/output-contract.md)
-- [本地分流脚本](./scripts/route_image_request.py)
+```bash
+py .\scripts\route_image_request.py --prompt "<user goal>" --file "<file name or path>" --hint "<OCR or extra clue>"
+```
+
+📎 Parameters:
+
+- `--prompt`: the user's goal or question
+- `--file`: image file name or path, repeatable
+- `--hint`: OCR text, title, note, or any extra clue, repeatable
+
+## 📄 Output
+
+📦 A normal run gives you two core outputs:
+
+| Output | Content |
+|--------|---------|
+| `Analysis Report` | route decision, key findings, detailed critique, overall judgment |
+| `Study Report` | learning focus, drills, likely mistakes, next-step practice |
+
+🧪 For batches, the skill can also comment on set-level consistency, before/after changes, and whether the images should be split into subgroups first.
+
+## ⚠️ Ground Rules
+
+🧱 The script output is a starting point, not the final answer.
+
+👀 Important judgments have to go back to visible evidence.
+
+📐 Different image types should not be judged with the same standard.
+
+🤝 When the route is unclear, the skill should say so instead of bluffing.
+
+## ✅ Supported Environments
+
+💻 This skill works best in AI agent environments that can load local skill folders and accept image input.
+
+| Environment | Status |
+|-------------|--------|
+| Agents that can read `SKILL.md` and local reference files | ✅ Supported |
+| Agents that can inspect screenshots, local images, or image attachments | ✅ Supported |
+| Text-only chat environments with no access to local skill files | ⚠️ Limited |
+
+## 🔗 Related Files
+
+📚 Key files in this repo:
+
+- [README.zh-CN.md](./README.zh-CN.md)
+- [SKILL.md](./SKILL.md)
+- [references/route-matrix.md](./references/route-matrix.md)
+- [references/output-contract.md](./references/output-contract.md)
+- [scripts/route_image_request.py](./scripts/route_image_request.py)
