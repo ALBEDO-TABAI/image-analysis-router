@@ -4,9 +4,9 @@
 
 <div align="center">
 
-**🖼️ OpenAI Skill** | 先选读图方法，再给分析结论
+**🖼️ OpenAI + Claude Skill** | 先选读图方法，再给分析结论
 
-[![类型: OpenAI Skill](https://img.shields.io/badge/类型-OpenAI%20Skill-6f42c1)](./SKILL.md)
+[![类型: OpenAI + Claude Skill](https://img.shields.io/badge/类型-OpenAI%20%2B%20Claude%20Skill-6f42c1)](./SKILL.md)
 [![路线数量: 17](https://img.shields.io/badge/路线-17-1f6feb)](./references/route-matrix.md)
 [![Python: 3.13+ 已验证](https://img.shields.io/badge/Python-3.13%2B%20已验证-2ea44f)](./scripts/route_image_request.py)
 
@@ -40,7 +40,7 @@ py --version
 
 ### 使用方式
 
-🧩 这是一个本地 OpenAI Skill。把整个目录放进你的 Skill 目录里：
+🧩 这是一个本地 Skill，适用于 OpenAI 和 Claude 生态里的代理环境。把整个目录放进你的 Skill 目录里：
 
 ```bash
 mkdir -p "$CODEX_HOME/skills"

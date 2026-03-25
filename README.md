@@ -4,9 +4,9 @@
 
 <div align="center">
 
-**🖼️ OpenAI Skill** | Route first, analyze second
+**🖼️ OpenAI + Claude Skill** | Route first, analyze second
 
-[![Type: OpenAI Skill](https://img.shields.io/badge/Type-OpenAI%20Skill-6f42c1)](./SKILL.md)
+[![Type: OpenAI + Claude Skill](https://img.shields.io/badge/Type-OpenAI%20%2B%20Claude%20Skill-6f42c1)](./SKILL.md)
 [![Routes: 17](https://img.shields.io/badge/Routes-17-1f6feb)](./references/route-matrix.md)
 [![Python: 3.13+ tested](https://img.shields.io/badge/Python-3.13%2B%20tested-2ea44f)](./scripts/route_image_request.py)
 
@@ -40,7 +40,7 @@ py --version
 
 ### Usage
 
-🧩 This is a local OpenAI skill. Put the whole folder into your skill directory:
+🧩 This is a local skill for OpenAI- and Claude-based agent environments. Put the whole folder into your skill directory:
 
 ```bash
 mkdir -p "$CODEX_HOME/skills"
