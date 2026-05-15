@@ -134,6 +134,13 @@ Do not fake system logic from one isolated image.
 - polished surface hiding weak task clarity
 - UI screens that look clean but do not guide action
 
+
+## Route-specific failure modes
+
+- Judging polish without checking the first focal point.
+- Treating mockups as finished artifacts without noting presentation framing.
+- Letting brand mood hide weak hierarchy, CTA, or task clarity.
+
 ## Study report emphasis
 
 - recommend one hierarchy drill
@@ -141,3 +148,11 @@ Do not fake system logic from one isolated image.
 - recommend one typography simplification drill
 - recommend one color or brand-consistency drill
 - if it is a UI set or campaign set, add one system-consistency drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

@@ -119,6 +119,13 @@ Do not invent a whole project logic from one hero shot.
 - furniture scale mismatches
 - atmospheric image masking unresolved storage, task, or movement problems
 
+
+## Route-specific failure modes
+
+- Judging render mood while ignoring circulation and use.
+- Mistaking staged styling for spatial planning.
+- Ignoring scale, storage, lighting practicality, or maintenance.
+
 ## Study report emphasis
 
 - recommend one zoning or furniture-planning drill
@@ -126,3 +133,11 @@ Do not invent a whole project logic from one hero shot.
 - recommend one material-combination or finish-discipline drill
 - recommend one lived-use walkthrough exercise
 - if it is a project set, add one consistency drill across rooms
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

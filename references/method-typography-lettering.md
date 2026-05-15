@@ -103,9 +103,24 @@ Do not infer full type-system quality from one heroic wordmark crop.
 - trend-coded distress or distortion hiding basic construction problems
 - brand voice claimed by styling without functional fit
 
+
+## Route-specific failure modes
+
+- Praising expressive shapes while ignoring spacing.
+- Judging one hero word as if it proves a whole type system.
+- Mistaking distressed texture for letterform quality.
+
 ## Study report emphasis
 
 - recommend one letter reconstruction drill
 - recommend one spacing and text-color drill
 - recommend one use-case fit exercise
 - if multiple samples exist, add one family-consistency drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

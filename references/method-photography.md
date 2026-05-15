@@ -140,6 +140,13 @@ Do not fake a style DNA from two unrelated images.
 - dramatic grading used to cover a weak frame
 - expressive intent claimed after the fact instead of visible in the capture
 
+
+## Route-specific failure modes
+
+- Mistaking heavy editing for captured light.
+- Calling a posed or staged moment documentary without evidence.
+- Praising technical cleanliness while missing subject priority.
+
 ## Study report emphasis
 
 - recommend one capture drill tied to the image's real weakness
@@ -147,3 +154,11 @@ Do not fake a style DNA from two unrelated images.
 - recommend one editing or culling drill
 - recommend one observation habit for future shoots
 - if the user studies a series, add one consistency drill and one anti-drift rule
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

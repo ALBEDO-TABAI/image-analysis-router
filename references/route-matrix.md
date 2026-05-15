@@ -9,6 +9,18 @@ Use this file to decide which analysis method fits the input best.
 3. Break ties with the route that best explains the image's success or failure.
 4. If the batch is truly mixed, split it.
 
+## Status gate
+
+Before choosing a route, separate routing uncertainty from missing evidence.
+
+| Status | Meaning | Action |
+| --- | --- | --- |
+| `ok` | visual evidence is present and readable enough | route normally |
+| `visual_input_missing` | no image or visual evidence reached this skill | ask upstream for image evidence; do not route |
+| `visual_evidence_insufficient` | image exists but is too low-res, cropped, blocked, or compressed for route-safe analysis | state the readable limits; do not use fallback |
+| `needs_clarification` | image is readable but the user's intended lens would change the output | ask one question using top route and focus options |
+| `unknown` batch type | script cannot see image count or roles | let visual inspection decide batch type and state the override if needed |
+
 ## Route table
 
 | Route | Strong signals | Use when the user cares about | Avoid when | Read next |
@@ -50,11 +62,33 @@ Use this file to decide which analysis method fits the input best.
 - `typography-lettering` vs `graphic-design`: choose `typography-lettering` when type itself is the primary subject; choose `graphic-design` when type serves a broader layout.
 - `presentation-document` vs `graphic-design`: choose `presentation-document` when argument flow and page sequence matter; choose `graphic-design` when single-page campaign impact matters most.
 - Use `universal-fallback` when top scores stay weak and no tie cluster points to a meaningful subgroup.
+- Use `generic-mixed` when two or more strong route scores are close, or a batch has multiple stable subroutes.
+- Use `universal-fallback` only when all named route signals are weak but the visual evidence is still readable.
+- Use `visual_evidence_insufficient`, not `universal-fallback`, when the image cannot be read enough to support a structured analysis.
 
-## Route confidence
+## Route and intent confidence
 
 - `high`: strong route signals and no serious competitor
 - `medium`: one route leads, but a second route could also work
 - `low`: not enough evidence, or the image is hybrid enough that the chosen route is only provisional
 
-When confidence is `low`, say so and name the runner-up route.
+Track route and intent separately.
+
+- `route_confidence` answers whether the image evidence points to a route.
+- `intent_confidence` answers whether the user's desired lens is clear.
+
+When either confidence is `low`, do one of these before committing:
+
+- If the user's goal is ambiguous enough to change the route or output depth, ask one clarifying question.
+- If the goal is clear but no named route fits, use `universal-fallback` as a named first-principles route.
+- If the input is a mixed batch, split it into route-specific subgroups.
+
+## Batch type rules
+
+- `single`: one image or one clear visual subject.
+- `same_series`: several images share one stable route and one project logic.
+- `versioned`: before/after, old/new, v1/v2, or revision comparison.
+- `reference_pack`: mood board or reference set; extract repeated signals instead of over-critiquing each image.
+- `subject_vs_reference`: one subject image is being evaluated against references; never treat references as the main object.
+- `mixed_domain`: multiple stable route groups appear in one set.
+- `unknown`: script cannot see count or roles; visual inspection must decide.

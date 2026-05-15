@@ -55,9 +55,24 @@ If certainty is low, say that up front instead of pretending the batch is cleane
 - If the user needs depth, recommend the best next route and switch into that route's method.
 - If the ambiguity itself matters, stop after triage plus a short first-pass critique.
 
+
+## Route-specific failure modes
+
+- Flattening mixed inputs into one route.
+- Treating a tie as failure instead of grouping evidence.
+- Giving a full critique before naming what context would resolve the split.
+
 ## Study report emphasis
 
 - tell the user which category to study first and why
 - give one sorting or comparison exercise
 - say what evidence to collect next time to enable a sharper critique
 - if the batch is mixed, recommend how to regroup it before deeper analysis
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

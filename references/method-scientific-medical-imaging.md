@@ -98,8 +98,23 @@ Do not turn a visual inspection into a medical or scientific conclusion.
 - before/after panels shown with inconsistent display conditions
 - specialist image presented to a general audience with no bridge explanation
 
+
+## Route-specific failure modes
+
+- Turning visual inspection into diagnosis.
+- Ignoring scale, orientation, display conditions, or annotation limits.
+- Calling an image scientific because it looks technical.
+
 ## Study report emphasis
 
 - recommend one annotation and labeling drill
 - recommend one display-normalization or comparison drill
 - recommend one audience-translation exercise
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

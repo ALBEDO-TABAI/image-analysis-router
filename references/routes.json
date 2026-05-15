@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "routes": [
+    "graphic-design",
+    "photography",
+    "painting-illustration",
+    "interior-design",
+    "architecture-urban",
+    "infographic-diagram",
+    "product-industrial-design",
+    "comics-sequential",
+    "fashion-styling",
+    "sculpture-installation-craft",
+    "game-visual-design",
+    "scientific-medical-imaging",
+    "typography-lettering",
+    "presentation-document",
+    "film-frame",
+    "generic-mixed",
+    "universal-fallback"
+  ],
+  "router_only_excludes": [
+    "generic-mixed",
+    "universal-fallback"
+  ],
+  "comment": "Single source of truth. route_image_request.py and validate_image_router.py both load this. 'router_only_excludes' lists routes that are decided at LLM/orchestrator level (not in the prior keyword scorer)."
+}

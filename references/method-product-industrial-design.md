@@ -131,9 +131,24 @@ Do not fake production confidence from one beauty shot.
 - interesting form language that never resolves into usable affordance
 - packaging that looks graphic but opens awkwardly
 
+
+## Route-specific failure modes
+
+- Reading an ad render as proof of usable product design.
+- Ignoring seams, controls, grip, scale, or manufacturing clues.
+- Mistaking premium finish for coherent affordance.
+
 ## Study report emphasis
 
 - recommend one use-sequence sketch drill
 - recommend one silhouette and proportion comparison drill
 - recommend one seam/joint/detail study
 - recommend one material-finish discipline drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

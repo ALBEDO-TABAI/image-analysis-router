@@ -117,9 +117,24 @@ Do not invent data quality claims from styling alone.
 - inconsistent notation across one visual or across pages
 - process diagrams with arrows that do not establish clear direction
 
+
+## Route-specific failure modes
+
+- Accepting a headline that the chart does not prove.
+- Missing misleading axes, legends, or cherry-picked ranges.
+- Treating decoration as explanation.
+
 ## Study report emphasis
 
 - recommend one redraw or simplification drill
 - recommend one label-and-annotation clarity drill
 - recommend one truthfulness or scale-check drill
 - if it is a multi-page set, add one notation-consistency drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

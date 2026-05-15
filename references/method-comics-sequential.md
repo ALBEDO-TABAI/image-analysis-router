@@ -108,9 +108,24 @@ Do not infer a whole chapter arc from one isolated page.
 - action energy without spatial clarity
 - dramatic splash panel unsupported by surrounding beats
 
+
+## Route-specific failure modes
+
+- Praising drawing quality while missing broken reading order.
+- Ignoring balloon placement and gutter rhythm.
+- Treating one dramatic panel as proof that the full beat lands.
+
 ## Study report emphasis
 
 - recommend one panel-order redraw drill
 - recommend one balloon-placement or text-density drill
 - recommend one acting-and-silhouette drill
 - if multiple pages exist, add one pacing-comparison drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

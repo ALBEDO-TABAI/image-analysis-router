@@ -103,9 +103,24 @@ Do not judge a slide like a poster if the page's job is to explain, compare, or 
 - report page that reads like a slide, or slide that reads like a report page
 - sequence inconsistency across pages causing cognitive reset
 
+
+## Route-specific failure modes
+
+- Praising clean styling while missing the actual takeaway.
+- Ignoring whether charts or tables support the headline.
+- Treating a report page as a poster instead of decision support.
+
 ## Study report emphasis
 
 - recommend one headline-to-evidence drill
 - recommend one density reduction drill
 - recommend one sequence-role mapping exercise
 - if several pages exist, add one system-consistency exercise
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

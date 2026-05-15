@@ -128,9 +128,24 @@ Do not invent a full styling language from one cropped outfit shot.
 - trend-coded styling without a clear persona
 - editorial drama covering weak wearability or poor product read
 
+
+## Route-specific failure modes
+
+- Confusing a strong photo with strong styling.
+- Ignoring body proportion when layers or oversize pieces dominate.
+- Reading trend signals as persona without checking silhouette and accessory logic.
+
 ## Study report emphasis
 
 - recommend one silhouette-copy drill
 - recommend one fabric-and-accessory pairing drill
 - recommend one persona-board exercise
 - if it is a look set, add one consistency-vs-range exercise
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

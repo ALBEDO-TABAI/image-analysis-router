@@ -116,9 +116,24 @@ Do not fake sequence logic from a single frame.
 - calling a marketing still cinematic just because it is wide and moody
 - reading production polish as dramatic strength when blocking is weak
 
+
+## Route-specific failure modes
+
+- Inventing plot from a single still.
+- Calling any wide moody image cinematic without checking blocking.
+- Mistaking production polish for dramatic function.
+
 ## Study report emphasis
 
 - recommend one frame-grab comparison exercise
 - recommend one blocking or silhouette decomposition drill
 - recommend one lighting-and-palette study
 - recommend one sequence-level follow-up if more frames can be collected
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

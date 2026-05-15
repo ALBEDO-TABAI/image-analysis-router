@@ -1,0 +1,211 @@
+{
+  "skill_name": "image-analysis-router",
+  "evals": [
+    {
+      "id": 1,
+      "name": "no visual input",
+      "prompt": "分析这张图",
+      "files": [],
+      "hints": [],
+      "expected_status": "visual_input_missing",
+      "expected_route": null,
+      "expected_response_depth": "quick"
+    },
+    {
+      "id": 2,
+      "name": "unreadable cropped image",
+      "prompt": "这张图太模糊看不清，先判断能不能分析",
+      "files": ["lowres-cropped-image.jpg"],
+      "hints": [],
+      "expected_status": "visual_evidence_insufficient",
+      "expected_route": null
+    },
+    {
+      "id": 3,
+      "name": "abstract readable image",
+      "prompt": "这图怎么样",
+      "files": ["abstract-image.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "universal-fallback",
+      "expected_confidence": "low",
+      "expected_response_depth": "quick"
+    },
+    {
+      "id": 4,
+      "name": "poster graphic design",
+      "prompt": "拆一下这张活动海报的层级和版式",
+      "files": ["summer-event-poster.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "graphic-design",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 5,
+      "name": "street photography deep learning",
+      "prompt": "深入拆解这张街拍摄影作品怎么学",
+      "files": ["street-photo-IMG_2048.dng"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "photography",
+      "expected_response_depth": "deep",
+      "expected_study_report_mode": "full",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 6,
+      "name": "architecture facade",
+      "prompt": "分析这个建筑立面和街道关系",
+      "files": ["tower-facade-render.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "architecture-urban",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 7,
+      "name": "architecture photo as photography",
+      "prompt": "这张建筑照片主要看摄影构图和光线",
+      "files": ["tower-facade-photo.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "photography",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 8,
+      "name": "building photo as architecture",
+      "prompt": "这张照片主要帮我看建筑立面比例，不是摄影技巧",
+      "files": ["DSC_1024-building-facade.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "architecture-urban",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 9,
+      "name": "product ad as graphic design",
+      "prompt": "拆一下这个产品广告视觉，看看画面说服力",
+      "files": ["earbuds-render.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "graphic-design",
+      "expected_response_depth": "standard",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 10,
+      "name": "product form and cmf",
+      "prompt": "分析这个耳机产品外观、CMF 和材质工艺",
+      "files": ["earbuds-render.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "product-industrial-design",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 11,
+      "name": "dashboard report page",
+      "prompt": "帮我看这页 sales dashboard report 的汇报清晰度",
+      "files": ["sales-dashboard-report.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "presentation-document",
+      "expected_batch_type": "single",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 12,
+      "name": "mixed domain batch",
+      "prompt": "分析这组混合图片",
+      "files": ["poster.jpg", "room-render.png", "xray.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "generic-mixed",
+      "expected_batch_type": "mixed_domain",
+      "expected_medical_safety": true
+    },
+    {
+      "id": 13,
+      "name": "subject versus reference",
+      "prompt": "用参考图对比主图，看主图哪里弱",
+      "files": ["main-poster.jpg", "reference-poster.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_batch_type": "subject_vs_reference"
+    },
+    {
+      "id": 14,
+      "name": "reference pack",
+      "prompt": "分析这个 moodboard 参考包的共同风格",
+      "files": ["ref-room.jpg", "ref-poster.jpg", "ref-product.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_batch_type": "reference_pack"
+    },
+    {
+      "id": 15,
+      "name": "medical evidence inside poster",
+      "prompt": "分析这张 X 光元素健康科普海报的版式和说服力",
+      "files": ["xray-health-campaign-poster.jpg"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "graphic-design",
+      "expected_medical_safety": true,
+      "min_confidence": "medium"
+    },
+    {
+      "id": 16,
+      "name": "diagnostic medical prompt",
+      "prompt": "看看这张 X 光图的标注和可读性",
+      "files": ["chest-xray-annotated.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "scientific-medical-imaging",
+      "expected_medical_safety": true,
+      "min_confidence": "medium"
+    },
+    {
+      "id": 17,
+      "name": "ai generated illustration",
+      "prompt": "看看这张 AI 生成插画的文字异常和手指问题",
+      "files": ["ai-illustration.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "painting-illustration",
+      "expected_ai_content_check": "visible",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 19,
+      "name": "type poster routes to typography",
+      "prompt": "分析这张字体海报的字形和阅读质感",
+      "files": ["type-poster.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "typography-lettering",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 20,
+      "name": "dashboard correctness routes to infographic",
+      "prompt": "这个 dashboard 的数据编码和图表误读风险怎么看",
+      "files": ["sales-dashboard.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "infographic-diagram",
+      "min_confidence": "medium"
+    },
+    {
+      "id": 21,
+      "name": "game menu routes to game-visual-design",
+      "prompt": "看看这个游戏菜单界面的交互清晰度",
+      "files": ["rpg-menu.png"],
+      "hints": [],
+      "expected_status": "ok",
+      "expected_route": "game-visual-design",
+      "min_confidence": "medium"
+    }
+  ]
+}

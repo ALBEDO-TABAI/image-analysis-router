@@ -100,9 +100,24 @@ Do not infer full UX quality from one polished screenshot.
 - environment beauty with poor landmark differentiation
 - menus that look premium but slow down decision-making
 
+
+## Route-specific failure modes
+
+- Praising atmosphere while missing play readability.
+- Ignoring HUD and world-cue competition.
+- Treating menu polish as interaction speed or decision clarity.
+
 ## Study report emphasis
 
 - recommend one HUD reduction or clarity drill
 - recommend one landmark-and-navigation drill
 - recommend one state-feedback comparison drill
 - if multiple screens exist, add one consistency-of-visual-language exercise
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

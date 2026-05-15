@@ -121,9 +121,24 @@ Do not infer full urban performance from one cropped exterior image.
 - render glow hiding unresolved entry, shade, or material logic
 - public realm treated as leftover space
 
+
+## Route-specific failure modes
+
+- Treating a photogenic facade as proof of urban quality.
+- Judging site fit from a cropped hero angle.
+- Mistaking decorative facade rhythm for real entry, shade, or public-realm logic.
+
 ## Study report emphasis
 
 - recommend one massing-comparison drill
 - recommend one facade rhythm or opening-study drill
 - recommend one site-and-ground-plane walkthrough exercise
 - recommend one climate or material-response study
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

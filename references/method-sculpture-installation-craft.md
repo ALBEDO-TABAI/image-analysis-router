@@ -115,9 +115,24 @@ Do not fake whole-body knowledge from one cropped catalog shot.
 - craft labor visible, but structure still feels arbitrary
 - installation scale doing the work that the forms themselves do not
 
+
+## Route-specific failure modes
+
+- Judging one front view as if all angles are resolved.
+- Treating labor intensity as craft resolution.
+- Ignoring support, site, viewer path, and durability cues.
+
 ## Study report emphasis
 
 - recommend one multi-angle volume sketch drill
 - recommend one material/join detail study
 - recommend one site-and-viewer-path exercise
 - if it is a series, add one consistency-of-presence drill
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

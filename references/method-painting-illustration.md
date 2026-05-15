@@ -132,6 +132,13 @@ Do not invent an artist DNA from unrelated images.
 - local detail energy without whole-image control
 - AI-art polish masking unresolved anatomy, text, or object logic
 
+
+## Route-specific failure modes
+
+- Claiming symbolism without visible support.
+- Treating AI or digital polish as pictorial coherence.
+- Reading borrowed style markers as a resolved visual language.
+
 ## Study report emphasis
 
 - recommend one descriptive seeing drill before interpretation
@@ -139,3 +146,11 @@ Do not invent an artist DNA from unrelated images.
 - recommend one formal reduction drill
 - recommend one symbolism, iconography, or reference-building drill
 - if it is a batch, add one consistency drill and one anti-imitation warning
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.

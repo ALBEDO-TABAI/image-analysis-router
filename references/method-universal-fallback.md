@@ -89,8 +89,23 @@ Keep claims separated by certainty:
 - Name the strongest visible quality and the most serious blind spot.
 - Distinguish "interesting" from "legible" and "legible" from "effective."
 
+
+## Route-specific failure modes
+
+- Using this route when evidence is missing or unreadable.
+- Hiding uncertainty behind a generic summary.
+- Failing to name which route would become useful with more context.
+
 ## Study report emphasis
 
 - recommend one context-gathering step
 - recommend one redraw, regrouping, or re-annotation exercise
 - recommend one comparison exercise against a better-understood artifact type
+
+## Actionable drill format
+
+Every Study Report drill should be executable:
+
+- Drill name
+  - Do: state the concrete action.
+  - Finish: state what counts as completed or improved.
